@@ -1,11 +1,11 @@
 
 output "unique-seed" {
-  value = (var.unique-length > 0 || var.unique-seed != "") ? substr(coalesce(var.unique-seed, local.random_safe_generation), 0, var.unique-length) : ""
+  value       = (var.unique-length > 0 || var.unique-seed != "") ? substr(coalesce(var.unique-seed, local.random_safe_generation), 0, var.unique-length) : ""
   description = "Unique Seed (if unique-length > 0)"
 }
 
 output "validation" {
-  value = local.validation
+  value       = local.validation
   description = "Validation"
 }
 
