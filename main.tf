@@ -1,5 +1,5 @@
 resource "random_string" "main" {
-  count = var.unique-length > 0 ? 1 : 0
+  count   = var.unique-length > 0 ? 1 : 0
   length  = 60
   special = false
   upper   = false
@@ -7,7 +7,7 @@ resource "random_string" "main" {
 }
 
 resource "random_string" "first_letter" {
-  count = var.unique-length > 0 ? 1 : 0
+  count   = var.unique-length > 0 ? 1 : 0
   length  = 1
   special = false
   upper   = false
