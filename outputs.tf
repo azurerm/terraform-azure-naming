@@ -803,6 +803,31 @@ output "powerbi_embedded" {
   description = "Powerbi Embedded"
 }
 
+output "private_dns_resolver" {
+  value       = local.az.private_dns_resolver
+  description = "Private Dns Resolver"
+}
+
+output "private_dns_resolver_outbound" {
+  value       = local.az.private_dns_resolver_outbound
+  description = "Private Dns Resolver Outbound Endpoint"
+}
+
+output "private_dns_resolver_inbound" {
+  value       = local.az.private_dns_resolver_inbound
+  description = "Private Dns Resolver Inbound Endpoint"
+}
+
+output "private_dns_resolver_ruleset" {
+  value       = local.az.private_dns_resolver_ruleset
+  description = "Private Dns Resolver Ruleset"
+}
+
+output "private_dns_resolver_network_link" {
+  value       = local.az.private_dns_resolver_network_link
+  description = "Private Dns Resolver Network Link"
+}
+
 output "private_dns_a_record" {
   value       = local.az.private_dns_a_record
   description = "Private Dns A Record"
