@@ -1617,6 +1617,56 @@ locals {
       scope       = "region"
       regex       = "^[a-zA-Z0-9][a-zA-Z0-9-]+$"
     }
+    private_dns_resolver = {
+      name        = substr(join("-", compact([local.prefix, "pdnsres", local.suffix])), 0, 80)
+      name_unique = substr(join("-", compact([local.prefix, "pdnsres", local.suffix_unique])), 0, 80)
+      dashes      = true
+      slug        = "pdnsres"
+      min_length  = 1
+      max_length  = 80
+      scope       = "parent"
+      regex       = "^[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9_]$"
+    }
+    private_dns_resolver_outbound = {
+      name        = substr(join("-", compact([local.prefix, "pdnsout", local.suffix])), 0, 80)
+      name_unique = substr(join("-", compact([local.prefix, "pdnsout", local.suffix_unique])), 0, 80)
+      dashes      = true
+      slug        = "pdnsout"
+      min_length  = 1
+      max_length  = 80
+      scope       = "parent"
+      regex       = "^[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9_]$"
+    }
+    private_dns_resolver_inbound = {
+      name        = substr(join("-", compact([local.prefix, "pdnsin", local.suffix])), 0, 80)
+      name_unique = substr(join("-", compact([local.prefix, "pdnsin", local.suffix_unique])), 0, 80)
+      dashes      = true
+      slug        = "pdnsin"
+      min_length  = 1
+      max_length  = 80
+      scope       = "parent"
+      regex       = "^[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9_]$"
+    }
+    private_dns_resolver_ruleset = {
+      name        = substr(join("-", compact([local.prefix, "pdnsrs", local.suffix])), 0, 80)
+      name_unique = substr(join("-", compact([local.prefix, "pdnsrs", local.suffix_unique])), 0, 80)
+      dashes      = true
+      slug        = "pdnsrs"
+      min_length  = 1
+      max_length  = 80
+      scope       = "global"
+      regex       = "^[a-zA-Z0-9][a-zA-Z0-9-]+$"
+    }
+    private_dns_resolver_network_link = {
+      name        = substr(join("-", compact([local.prefix, "pdnsnl", local.suffix])), 0, 80)
+      name_unique = substr(join("-", compact([local.prefix, "pdnsnl", local.suffix_unique])), 0, 80)
+      dashes      = true
+      slug        = "pdnsnl"
+      min_length  = 1
+      max_length  = 80
+      scope       = "global"
+      regex       = "^[a-zA-Z0-9][a-zA-Z0-9-]+$"
+    }
     private_dns_a_record = {
       name        = substr(join("-", compact([local.prefix, "pdnsrec", local.suffix])), 0, 80)
       name_unique = substr(join("-", compact([local.prefix, "pdnsrec", local.suffix_unique])), 0, 80)
